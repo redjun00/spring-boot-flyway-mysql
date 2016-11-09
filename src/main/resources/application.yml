@@ -1,0 +1,22 @@
+spring:
+  profiles.active: local-store
+
+---
+spring:
+  profiles: local-store
+  jpa:
+    database: MYSQL
+    hibernate:
+      show_sql: true
+      ddl-auto: validate
+      ejb:
+        naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#    properties:
+#      hibernate.hbm2ddl.auto: create
+#      hibernate.hbm2ddl.auto: validate 이렇게 하면 에러난다.
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/store
+    username: root
+    password: 'root'
+---
